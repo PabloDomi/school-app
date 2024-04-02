@@ -4,7 +4,7 @@ import LoginForm from '../components/LoginForm'
 import RegisterForm from '../components/RegisterForm'
 import { useUser } from '../hooks/useUser'
 import { useRegister } from '../hooks/useRegister'
-import { Alert } from 'react-bootstrap'
+import { Alert, Button } from 'react-bootstrap'
 
 function School() {
   
@@ -95,7 +95,7 @@ function School() {
         { user
           ? <div>
                 <footer>
-                    <button onClick={logout} >Logout</button>
+                    <Button variant='secondary' onClick={logout} >Logout</Button>
                 </footer>
             </div>
           : <RegisterForm

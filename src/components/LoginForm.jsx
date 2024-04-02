@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Notification from "./Notification"
 import { Form, Button } from 'react-bootstrap'
@@ -11,14 +11,8 @@ import { Form, Button } from 'react-bootstrap'
 
     const [errorMessage, setErrorMessage] = useState('')
     const navigate = useNavigate()
-    const togglableRef = useRef
 
-    const handleSubmits = (event) => {
-        event.preventDefault()
-    
-            handleSubmit(event)
-            togglableRef.current.toggleVisibility()
-        }
+
 
     const checkProps = () => { 
         if(!!props.username | !!props.password) { 
@@ -80,7 +74,7 @@ import { Form, Button } from 'react-bootstrap'
                                             </svg>
                                         </div>
                                     <Notification message={errorMessage} />
-                                        <Form onSubmit={handleSubmits}>
+                                        <Form onSubmit={handleSubmit}>
                                             <Form.Group id='username'>
                                                 <Form.Control
                                                 className="my-4 py-2 border-2"
